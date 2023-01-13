@@ -1,0 +1,7 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "css.lint.unknownProperties": "ignore",
+  "less.lint.unknownAtRules": "ignore",
+  "less.lint.unknownProperties": "ignore",
+  "less.lint.unknownVendorSpecificProperties": "warning"
+}

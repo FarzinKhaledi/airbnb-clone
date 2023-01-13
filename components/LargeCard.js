@@ -6,7 +6,7 @@ function LargeCard({ img, title, description, buttonText }) {
     <section className=" relative h-96 cursor-pointer mt-8 ">
       <div className="relative h-96 min-w-[300px]">
         <Image
-          className="rounded-xl"
+          className="shadow-md rounded-xl"
           src={img}
           layout="fill"
           objectFit="cover"

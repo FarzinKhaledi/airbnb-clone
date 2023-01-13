@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import SmallCard from '../components/SmallCard';
 import MediumCard from '../components/MediumCard';
 import LargeCard from '../components/LargeCard';
+import Footer from '../components/Footer';
 
 // export async function getStaticProps() {
 //   const exploreData = await fetch('https://links.papareact.com/pyp').then(
@@ -66,6 +67,11 @@ const Home = () => {
     {
       img: 'https://links.papareact.com/41m',
       location: 'Hove',
+      distance: '2-hour drive',
+    },
+    {
+      img: 'https://links.papareact.com/4cj',
+      location: 'Puket',
       distance: '2-hour drive',
     },
   ];
@@ -137,6 +143,7 @@ const Home = () => {
           </div>
         </section>
       </main>
+      <Footer/>
     </div>
   );
 };
