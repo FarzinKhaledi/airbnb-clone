@@ -24,10 +24,6 @@ function SmallCard({ img, distance, location }) {
           className="rounded-lg"
         />
       </div>
-      <div className=" ">
-        <h2>{location}</h2>
-        <h3>{distance}</h3>
-      </div>
     </div>
   );
 }

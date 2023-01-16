@@ -12,7 +12,7 @@ function MediumCard({ img, title }) {
         transition 
         duration-300 
         easy-out
-         "
+      "
     >
       <div className="relative h-80 w-80 ">
         <Image className="rounded-xl" alt={title} src={img} layout="fill" />
