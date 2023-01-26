@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { format } from 'date-fns';
 import InfoCard from '../components/InfoCard';
+import Map from '../components/Map';
 
 // export async function getServerSideProps() {
 //   const searchResults = await fetch('https://jsonkeeper.com/b/5NPS').then(
@@ -116,8 +117,9 @@ function Search() {
       <Header
         placeholder={`${location} | ${range} | ${numberOfGusets} ${guests}`}
       />
-      <main className="flex flex-col ">
-        <section className="mb-1">
+
+      <main className="grid lg:grid-cols-3 gap-8 shadow-sm ">
+        <section className="mb-1 col-span-2">
           <p className="text-xs mt-2 ml-1 shadow-sm">
             300+ Stays {range} for {numberOfGusets} {guests}
           </p>
@@ -125,29 +127,34 @@ function Search() {
             Stays in {location}
           </h1>
 
-          <div className="hidden lg:inline-flex justify-between">
-            <p className="my-button">Cancellatin Flexiblity</p>
+          <div className="hidden lg:inline-flex justify-between mb-4 ">
+            <p className="my-button ">Cancellatin Flexiblity</p>
             <p className="my-button">Type Of Place</p>
             <p className="my-button">Price</p>
             <p className="my-button">More filters</p>
           </div>
+
+          <div className="flex flex-col">
+            {search_data.map(
+              ({ img, location, title, description, star, price, total }) => [
+                <InfoCard
+                  img={img}
+                  location={location}
+                  title={title}
+                  description={description}
+                  star={star}
+                  price={price}
+                  total={total}
+                  key="info"
+                />,
+              ]
+            )}
+          </div>
         </section>
-        <div className="">
-          {search_data.map(
-            ({ img, location, title, description, star, price, total }) => [
-              <InfoCard
-                img={img}
-                location={location}
-                title={title}
-                description={description}
-                star={star}
-                price={price}
-                total={total}
-                key="info"
-              />,
-            ]
-          )}
-        </div>
+
+        <section className="relative w-full h-80 lg:h-auto mb-12 ">
+          <Map />
+        </section>
       </main>
       <Footer />
     </div>
